@@ -17,4 +17,3 @@ jobs:
             - run: |
                 docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:latest
 
-                
