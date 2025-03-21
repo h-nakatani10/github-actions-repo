@@ -1,0 +1,10 @@
+name: Seacrets
+on: push
+jobs:
+    print:
+        runs-on: ubuntu-latest
+        env:
+            PASSWORD: ${{ secrets.PASSWORD }}
+        steps:
+            - run: echo "Password is ${PASSWORD}"
+            - run: echo "Password is ${PASSWORD:0:1} ${PASSWORD#?}"
