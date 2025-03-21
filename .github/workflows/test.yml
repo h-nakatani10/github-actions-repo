@@ -7,8 +7,31 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
-            - uses: actions/setup-go@v5
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+            - name: Setup Go lang
+              uses: actions/setup-go@v5
               with:
                   go-version: '1.22'
-            - run: go test go/excellent/*.go
+            - name: Run Test
+              run: go test go/excellent/*.go
+            
+    Lint: 
+        runs-on: ubuntu-latest
+        permissions: 
+            checks: write
+            contents: read
+            pull-requests: write
+        steps: 
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+
+            - name: Run Golangci-lint with Reviewdog
+              uses: reviewdog/action-golangci-lint@v2
+              with: 
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                go_version: '1.22'
+                reporter: github-pr-review
+                level: warning
+                golangci_lint_flags: "--config=.golangci.yml"
+              
