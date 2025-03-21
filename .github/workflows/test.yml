@@ -35,5 +35,5 @@ jobs:
                 go_version: '1.22'
                 reporter: github-pr-review
                 level: warning
-                golangci_lint_flags: "--config=.golangci.yml"
+                golangci_lint_flags: "--config=go/excellent/.golangci.yml"
               
