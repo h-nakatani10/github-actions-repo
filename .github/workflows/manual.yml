@@ -7,6 +7,12 @@ on:
                 default: 'Hello'
                 required: true
                 description: 'The greeting to print'
+            log-level:
+                type: choice
+                options:
+                    - info
+                    - warning
+                default: info
 
 jobs:
     run:
