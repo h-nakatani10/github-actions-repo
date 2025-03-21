@@ -6,3 +6,4 @@ jobs:                                   # ジョブの定義
         steps:                          # ステップの定義
             - run: echo "Hello World"   # シェルコマンドの実行
             - uses: actions/checkout@v4 # アクションの呼び出し
+            - uses: actions/Super-Linter/super-linter@v5 # アクションの呼び出し
