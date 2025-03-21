@@ -15,4 +15,5 @@ linters:
     - misspell
     - lll
     - gofumpt
+    - shadow
 
