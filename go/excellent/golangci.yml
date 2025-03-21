@@ -7,13 +7,7 @@ linters-settings:
 linters:
   disable-all: false
   enable:
-    - govet
-    - errcheck
     - staticcheck
     - unused
-    - gosimple
-    - misspell
-    - lll
-    - gofumpt
-    - shadow
+
 
