@@ -1,9 +1,11 @@
 name: Status Check Functions
+run-name: ${{ github.actor }} is learning GitHub Actions
 on: push
 jobs:
     print:
         runs-on: ubuntu-latest
         steps:
-            - run: exit 1
+            - name: Print Hello
+              run: exit 1
             - run: echo "hello"
               if: ${{ failure() }}
