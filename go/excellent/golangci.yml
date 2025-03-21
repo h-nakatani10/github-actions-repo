@@ -2,8 +2,6 @@ run:
   deadline: 5m
 
 linters-settings:
-  govet:
-    check-shadowing: true
   golint:
     min-confidence: 0.8
 linters:
